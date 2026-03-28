@@ -160,7 +160,7 @@ if force_reload:
     st.success("✅ Cache cleared – loading latest CSV files with updated spin bins...")
     st.rerun()
 
-DATA_FOLDER = "Baseball dashboard Pikell"
+DATA_FOLDER = ""
 
 fixed_ranges = {
     "whiff_pct": (0, 70), "swing_pct": (10, 90), "avg_xwoba": (0.10, 0.55),
