@@ -282,7 +282,7 @@ ALL_COUNTS = [
     "3-0","3-1","3-2",
 ]
 
-DATA_FILE       = "statcast_all_pitches_2021-2025.csv"
+DATA_FILE       = "statcast_all_pitches_2021-2025.parquet"
 MAX_STYLED_ROWS = 5_000   # gradient styling only up to this many rows
 
 # ════════════════════════════════════════════════════════
@@ -521,7 +521,7 @@ st.markdown(f"""
 def load_all_data(path: str):
     if not os.path.exists(path):
         return None
-    df = pd.read_csv(path, encoding="utf-8-sig")
+    df = pd.read_parquet(path)
     df.columns = df.columns.str.strip()
     num_cols = [
         "total_pitches","swing_pct","whiff_pct","contact_pct",
